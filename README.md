@@ -17,22 +17,9 @@
 
 ## 🧩 Мои навыки и технологии
 
-<div align="center">
 
-| 🚀 Технология | 🎯 Уровень | 
-|:---:|:---:|:---:|
-| **HTML5** | ⭐⭐⭐⭐⭐ |
-| **CSS3** | ⭐⭐⭐⭐☆ | 
-| **JavaScript** | ⭐⭐⭐☆☆ |
-| **Python** | ⭐⭐⭐⭐☆ |
-| **Git & GitHub** | ⭐⭐⭐☆☆ | 
-| **Figma** | ⭐⭐⭐⭐☆ | 
-| **Адаптивная вёрстка** | ⭐⭐⭐⭐☆ |
-| **Быстро учусь** | ⭐⭐⭐⭐⭐ |
 
-</div>
 
-### 🛠️ Стек технологий
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
