@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алиса · портфолио</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light {
+      background: linear-gradient(145deg, #fce9ff 0%, #ffd9f0 100%);
+      color: #1e0f21;
+    }
+    body.dark {
+      background: linear-gradient(145deg, #1a1020 0%, #2a1a30 100%);
+      color: #f0e6f5;
+    }
+    body.pink {
+      background: linear-gradient(145deg, #ffe0f0 0%, #ffb8d8 100%);
+      color: #2d1b2e;
+    }
+
+    .card {
+      max-width: 1280px;
+      width: 100%;
+      border-radius: 64px;
+      padding: 2.8rem 2.5rem;
+      transition: background 0.3s, border 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    body.light .card {
+      background: rgba(255, 247, 252, 0.7);
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      box-shadow: 0 30px 60px rgba(255, 80, 160, 0.20), 0 8px 20px rgba(255, 0, 100, 0.08);
+    }
+    body.dark .card {
+      background: rgba(30, 20, 40, 0.8);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    }
+    body.pink .card {
+      background: rgba(255, 235, 245, 0.7);
+      border: 2px solid rgba(255, 200, 220, 0.8);
+      box-shadow: 0 30px 60px rgba(255, 80, 160, 0.25);
+    }
+
+    .theme-toggle-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.2rem;
+    }
+    .theme-btn {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      border: 2px solid #ff7eb3;
+      color: #b3005e;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 12px rgba(255, 0, 100, 0.10);
+    }
+    .theme-btn:hover {
+      background: #ff4d94;
+      color: white;
+      border-color: #ff2d7e;
+      transform: scale(0.97);
+    }
+    body.dark .theme-btn {
+      background: rgba(50, 30, 60, 0.8);
+      border-color: #b380cc;
+      color: #e6ccf5;
+    }
+    body.dark .theme-btn:hover {
+      background: #b380cc;
+      color: #1a1020;
+      border-color: #d9b3ff;
+    }
+    body.pink .theme-btn {
+      background: rgba(255, 220, 240, 0.8);
+      border-color: #ff80b0;
+      color: #a63d74;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      padding: 1.2rem 2rem;
+      border-radius: 120px;
+      backdrop-filter: blur(4px);
+      transition: background 0.3s, border 0.3s;
+    }
+    body.light .profile {
+      background: rgba(255, 220, 240, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+    body.dark .profile {
+      background: rgba(40, 25, 50, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    body.pink .profile {
+      background: rgba(255, 200, 220, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(135deg, #ff7eb3, #ff4d94);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 12px 28px -4px #ff4d94aa;
+      flex-shrink: 0;
+      border: 4px solid white;
+      transition: box-shadow 0.3s;
+    }
+    body.dark .avatar {
+      box-shadow: 0 12px 28px -4px #9f6bb3;
+      border-color: #2a1a30;
+    }
+    body.pink .avatar {
+      box-shadow: 0 12px 28px -4px #ff80b0;
+    }
+
+    .profile-text h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem;
+      transition: color 0.3s;
+    }
+    body.light .profile-text h1 { color: #2d1b2e; }
+    body.dark .profile-text h1 { color: #f0e6f5; }
+    body.pink .profile-text h1 { color: #2d1b2e; }
+
+    .profile-text h1 .highlight {
+      background: linear-gradient(135deg, #ff2d7e, #b32dff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .badge {
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 0.3rem 1.6rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin-top: 0.3rem;
+      border: 1px solid #ff9ec9;
+      transition: background 0.3s, color 0.3s, border 0.3s;
+    }
+    body.light .badge {
+      background: #ffd6e8;
+      color: #b3005e;
+    }
+    body.dark .badge {
+      background: #3a2a45;
+      color: #d9b3ff;
+      border-color: #7a5a8a;
+    }
+    body.pink .badge {
+      background: #ffd6e8;
+      color: #a63d74;
+      border-color: #ff9ac2;
+    }
+
+    .profile-text p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      max-width: 550px;
+      font-weight: 500;
+      line-height: 1.4;
+      padding: 0.2rem 1rem 0.2rem 0;
+      border-radius: 40px;
+      transition: color 0.3s;
+    }
+    body.light .profile-text p { color: #3d2a42; }
+    body.dark .profile-text p { color: #d0c0d8; }
+    body.pink .profile-text p { color: #3d2a42; }
+
+    .about-me {
+      margin: 0.5rem 0 2rem 0;
+      padding: 1.2rem 2rem;
+      border-radius: 40px;
+      transition: background 0.3s, border 0.3s, color 0.3s;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    body.light .about-me {
+      background: rgba(255, 220, 240, 0.2);
+      border: 1px solid rgba(255, 200, 220, 0.4);
+      color: #2d1b2e;
+    }
+    body.dark .about-me {
+      background: rgba(40, 25, 50, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: #d0c0d8;
+    }
+    body.pink .about-me {
+      background: rgba(255, 200, 220, 0.25);
+      border: 1px solid rgba(255, 200, 220, 0.5);
+      color: #2d1b2e;
+    }
+    .about-me strong {
+      background: linear-gradient(135deg, #ff2d7e, #b32dff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .slider-section {
+      margin: 2.8rem 0 0.8rem;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+      padding: 0.6rem 1.8rem 0.6rem 2rem;
+      border-radius: 80px;
+      backdrop-filter: blur(4px);
+      transition: background 0.3s, border 0.3s;
+    }
+    body.light .slider-header {
+      background: rgba(255, 215, 235, 0.3);
+      border: 1px solid #ffbfd9;
+    }
+    body.dark .slider-header {
+      background: rgba(40, 25, 50, 0.4);
+      border: 1px solid #4a3a55;
+    }
+    body.pink .slider-header {
+      background: rgba(255, 200, 220, 0.4);
+      border: 1px solid #ffb8d0;
+    }
+
+    .slider-header h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: color 0.3s;
+    }
+    body.light .slider-header h2 { color: #2d1b2e; }
+    body.dark .slider-header h2 { color: #f0e6f5; }
+    body.pink .slider-header h2 { color: #2d1b2e; }
+
+    .slider-header h2 span {
+      font-size: 1.2rem;
+      padding: 0.1rem 0.9rem;
+      border-radius: 60px;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.light .slider-header h2 span {
+      background: #ff4d94;
+      color: white;
+    }
+    body.dark .slider-header h2 span {
+      background: #7a5a8a;
+      color: #f0e6f5;
+    }
+    body.pink .slider-header h2 span {
+      background: #ff80b0;
+      color: white;
+    }
+
+    .hint {
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.4rem 1.4rem;
+      border-radius: 60px;
+      transition: background 0.3s, color 0.3s, border 0.3s;
+    }
+    body.light .hint {
+      background: #ffe2f0;
+      color: #a63d74;
+      border: 1px solid #ff9ac2;
+    }
+    body.dark .hint {
+      background: #3a2a45;
+      color: #c9aad9;
+      border: 1px solid #5a4a6a;
+    }
+    body.pink .hint {
+      background: #ffe2f0;
+      color: #a63d74;
+      border: 1px solid #ff9ac2;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 1.2rem 0.4rem 2.2rem;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      gap: 2rem;
+      border-radius: 40px;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+      transition: background 0.3s;
+      scrollbar-width: thin;
+    }
+    body.light .slider-wrapper {
+      background: rgba(255, 215, 235, 0.15);
+      scrollbar-color: #ff7eb3 #ffd9e9;
+    }
+    body.dark .slider-wrapper {
+      background: rgba(40, 25, 50, 0.2);
+      scrollbar-color: #7a5a8a #2a1a30;
+    }
+    body.pink .slider-wrapper {
+      background: rgba(255, 200, 220, 0.15);
+      scrollbar-color: #ff80b0 #ffd9e9;
+    }
+
+    .slider-wrapper::-webkit-scrollbar {
+      height: 10px;
+      border-radius: 30px;
+    }
+    body.light .slider-wrapper::-webkit-scrollbar-track { background: #ffd9e9; }
+    body.dark .slider-wrapper::-webkit-scrollbar-track { background: #2a1a30; }
+    body.pink .slider-wrapper::-webkit-scrollbar-track { background: #ffd9e9; }
+
+    .slider-wrapper::-webkit-scrollbar-thumb {
+      border-radius: 30px;
+      border: 2px solid white;
+    }
+    body.light .slider-wrapper::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #ff7eb3, #ff4d94);
+    }
+    body.dark .slider-wrapper::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #7a5a8a, #9f6bb3);
+    }
+    body.pink .slider-wrapper::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #ff80b0, #ff4d94);
+    }
+
+    .skill-card {
+      flex: 0 0 250px;
+      min-height: 250px;
+      border-radius: 48px;
+      padding: 2rem 1.4rem 1.8rem;
+      scroll-snap-align: start;
+      transition: all 0.25s cubic-bezier(0.1, 0.7, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+    }
+    body.light .skill-card {
+      background: linear-gradient(145deg, #ffffff, #fff5fa);
+      box-shadow: 0 16px 36px -8px rgba(255, 0, 100, 0.15);
+    }
+    body.dark .skill-card {
+      background: linear-gradient(145deg, #2a1a30, #1f1025);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6);
+      border-color: #4a3a55;
+    }
+    body.pink .skill-card {
+      background: linear-gradient(145deg, #ffffff, #ffe8f2);
+      box-shadow: 0 16px 36px -8px rgba(255, 80, 160, 0.2);
+      border-color: #ffb8d0;
+    }
+
+    .skill-card::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50px;
+      padding: 2px;
+      background: linear-gradient(135deg, #ff9ac2, #c77dff);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.4;
+      transition: 0.3s;
+    }
+    .skill-card:hover::after { opacity: 1; }
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.01);
+    }
+    body.light .skill-card:hover {
+      box-shadow: 0 28px 48px -10px #ff4d94cc;
+      border-color: #ff7eb3;
+    }
+    body.dark .skill-card:hover {
+      box-shadow: 0 28px 48px -10px #7a5a8a;
+      border-color: #9f6bb3;
+    }
+    body.pink .skill-card:hover {
+      box-shadow: 0 28px 48px -10px #ff80b0cc;
+      border-color: #ff80b0;
+    }
+
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    body.light .skill-icon { filter: drop-shadow(0 6px 8px #ff9ac277); }
+    body.dark .skill-icon { filter: drop-shadow(0 6px 8px #4a2a5a); }
+    body.pink .skill-icon { filter: drop-shadow(0 6px 8px #ff9ac277); }
+
+    .skill-card h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+      transition: color 0.3s;
+    }
+    body.light .skill-card h3 {
+      background: linear-gradient(135deg, #b3005e, #6a1b9a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body.dark .skill-card h3 {
+      background: linear-gradient(135deg, #d9b3ff, #b380cc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body.pink .skill-card h3 {
+      background: linear-gradient(135deg, #b3005e, #cc3388);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .skill-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      font-weight: 500;
+      flex: 1;
+      padding: 0.1rem 0.4rem;
+      border-radius: 20px;
+      transition: color 0.3s, background 0.3s;
+    }
+    body.light .skill-card p {
+      color: #3f2a47;
+      background: rgba(255, 200, 220, 0.1);
+    }
+    body.dark .skill-card p {
+      color: #c9b0d4;
+      background: rgba(255, 200, 220, 0.03);
+    }
+    body.pink .skill-card p {
+      color: #3f2a47;
+      background: rgba(255, 200, 220, 0.1);
+    }
+
+    .skill-level {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    body.light .skill-level { color: #a63d74; }
+    body.dark .skill-level { color: #b380cc; }
+    body.pink .skill-level { color: #a63d74; }
+
+    .level-bar {
+      height: 8px;
+      flex: 1;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid;
+      transition: background 0.3s, border 0.3s;
+    }
+    body.light .level-bar {
+      background: #fad3e4;
+      border-color: #ffb0cc;
+    }
+    body.dark .level-bar {
+      background: #3a2a45;
+      border-color: #5a4a6a;
+    }
+    body.pink .level-bar {
+      background: #fad3e4;
+      border-color: #ffb0cc;
+    }
+
+    .level-fill {
+      height: 100%;
+      border-radius: 30px;
+      transition: width 0.3s;
+    }
+    body.light .level-fill {
+      background: linear-gradient(90deg, #ff7eb3, #ff2d7e);
+      box-shadow: 0 0 12px #ff4d94aa;
+    }
+    body.dark .level-fill {
+      background: linear-gradient(90deg, #9f6bb3, #b380cc);
+      box-shadow: 0 0 12px #7a5a8a;
+    }
+    body.pink .level-fill {
+      background: linear-gradient(90deg, #ff80b0, #ff4d94);
+      box-shadow: 0 0 12px #ff80b0aa;
+    }
+
+    .level-fill.html { width: 88%; }
+    .level-fill.css { width: 72%; }
+    .level-fill.js { width: 58%; }
+    .level-fill.python { width: 68%; }
+    .level-fill.illustrator { width: 65%; }
+    .level-fill.git { width: 62%; }
+
+    .skill-card.soft {
+      background: linear-gradient(145deg, #fce4f0, #ffd9e9);
+    }
+    body.dark .skill-card.soft {
+      background: linear-gradient(145deg, #2a1a30, #1f1025);
+    }
+    body.pink .skill-card.soft {
+      background: linear-gradient(145deg, #fce4f0, #ffd9e9);
+    }
+
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .slider-nav button {
+      font-size: 1.6rem;
+      font-weight: 700;
+      padding: 0.2rem 1.6rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.08s linear;
+      backdrop-filter: blur(4px);
+      min-width: 80px;
+      letter-spacing: 1px;
+      border: 2px solid;
+    }
+    body.light .slider-nav button {
+      background: #ffecf3;
+      border-color: #ff7eb3;
+      color: #b3005e;
+      box-shadow: 0 6px 0 #ffb0cc, 0 8px 20px rgba(255, 0, 100, 0.15);
+    }
+    body.light .slider-nav button:hover {
+      background: #ff4d94;
+      color: white;
+      border-color: #ff2d7e;
+      box-shadow: 0 3px 0 #b3005e, 0 10px 24px #ff4d94aa;
+    }
+    body.dark .slider-nav button {
+      background: #2a1a30;
+      border-color: #7a5a8a;
+      color: #d9b3ff;
+      box-shadow: 0 6px 0 #4a3a55, 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    body.dark .slider-nav button:hover {
+      background: #7a5a8a;
+      color: #1a1020;
+      border-color: #b380cc;
+      box-shadow: 0 3px 0 #4a3a55, 0 10px 24px #7a5a8a;
+    }
+    body.pink .slider-nav button {
+      background: #ffecf3;
+      border-color: #ff80b0;
+      color: #a63d74;
+      box-shadow: 0 6px 0 #ffb8d0, 0 8px 20px rgba(255, 80, 160, 0.15);
+    }
+    body.pink .slider-nav button:hover {
+      background: #ff4d94;
+      color: white;
+      border-color: #ff2d7e;
+      box-shadow: 0 3px 0 #b3005e, 0 10px 24px #ff4d94aa;
+    }
+    .slider-nav button:active { transform: scale(0.92); }
+
+    .works-section {
+      margin: 3rem 0 2rem;
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .work-item {
+      border-radius: 32px;
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+      transition: all 0.25s;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .work-item:hover {
+      transform: translateY(-6px);
+    }
+    body.light .work-item {
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 24px rgba(255, 0, 100, 0.06);
+    }
+    body.dark .work-item {
+      background: rgba(40, 25, 50, 0.5);
+      border-color: #4a3a55;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    body.pink .work-item {
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 24px rgba(255, 80, 160, 0.1);
+      border-color: #ffb8d0;
+    }
+    body.light .work-item:hover {
+      box-shadow: 0 16px 36px rgba(255, 0, 100, 0.12);
+    }
+    body.dark .work-item:hover {
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    }
+    body.pink .work-item:hover {
+      box-shadow: 0 16px 36px rgba(255, 80, 160, 0.15);
+    }
+    .work-item .emoji {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .work-item h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    body.light .work-item h4 { color: #2d1b2e; }
+    body.dark .work-item h4 { color: #f0e6f5; }
+    body.pink .work-item h4 { color: #2d1b2e; }
+    .work-item p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 0.2rem;
+      transition: color 0.3s;
+    }
+    body.light .work-item p { color: #4f3a57; }
+    body.dark .work-item p { color: #b0a0b8; }
+    body.pink .work-item p { color: #4f3a57; }
+    .work-item .work-link {
+      font-size: 0.75rem;
+      margin-top: 0.4rem;
+      font-weight: 600;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      word-break: break-all;
+      max-width: 100%;
+    }
+    body.light .work-item .work-link { color: #7c3aed; }
+    body.dark .work-item .work-link { color: #b380cc; }
+    body.pink .work-item .work-link { color: #b3005e; }
+    .work-item:hover .work-link { opacity: 1; }
+
+    .contacts {
+      margin-top: 2.5rem;
+      padding: 1.5rem 2rem;
+      border-radius: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem 3rem;
+      transition: background 0.3s, border 0.3s;
+    }
+    body.light .contacts {
+      background: rgba(255, 220, 240, 0.25);
+      border: 1px solid rgba(255, 200, 220, 0.4);
+    }
+    body.dark .contacts {
+      background: rgba(40, 25, 50, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    body.pink .contacts {
+      background: rgba(255, 200, 220, 0.25);
+      border: 1px solid rgba(255, 200, 220, 0.4);
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    body.light .contact-item { color: #2d1b2e; }
+    body.dark .contact-item { color: #d0c0d8; }
+    body.pink .contact-item { color: #2d1b2e; }
+    .contact-item .icon {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .contact-item a {
+      text-decoration: none;
+      transition: color 0.2s;
+      font-weight: 600;
+    }
+    body.light .contact-item a { color: #7c3aed; }
+    body.dark .contact-item a { color: #b380cc; }
+    body.pink .contact-item a { color: #b3005e; }
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+    body.light .contact-item a:hover { color: #ff2d7e; }
+    body.dark .contact-item a:hover { color: #d9b3ff; }
+    body.pink .contact-item a:hover { color: #ff2d7e; }
+
+    .footer-note {
+      margin-top: 1.8rem;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      padding-top: 1.5rem;
+      border-radius: 120px;
+      transition: border 0.3s, background 0.3s, color 0.3s;
+      opacity: 0.8;
+    }
+    body.light .footer-note {
+      color: #4f2a47;
+      border-top: 2px solid rgba(255, 176, 204, 0.4);
+    }
+    body.dark .footer-note {
+      color: #a090a8;
+      border-top: 2px solid rgba(255, 255, 255, 0.05);
+    }
+    body.pink .footer-note {
+      color: #4f2a47;
+      border-top: 2px solid rgba(255, 176, 204, 0.4);
+    }
+
+    @media (max-width: 800px) {
+      .card { padding: 1.8rem 1.2rem; border-radius: 40px; }
+      .profile { flex-direction: column; align-items: flex-start; gap: 0.6rem; border-radius: 60px; padding: 1.5rem; }
+      .profile-text h1 { font-size: 2.4rem; }
+      .avatar { width: 90px; height: 90px; font-size: 3rem; }
+      .slider-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; border-radius: 60px; padding: 1rem 1.5rem; }
+      .slider-header h2 { font-size: 1.9rem; }
+      .skill-card { flex: 0 0 210px; min-height: 220px; padding: 1.4rem 1rem; }
+      .slider-nav button { font-size: 1.3rem; padding: 0.1rem 1.2rem; min-width: 60px; }
+      .theme-toggle-wrap { justify-content: center; }
+      .about-me { padding: 1rem 1.2rem; font-size: 1rem; }
+      .contacts { flex-direction: column; align-items: center; gap: 0.8rem; padding: 1.2rem; }
+      .works-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    }
+    @media (max-width: 480px) {
+      .skill-card { flex: 0 0 180px; min-height: 200px; }
+      .profile-text h1 { font-size: 2rem; }
+      .hint { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body class="light">
+  <div class="card">
+    <!-- кнопка тем -->
+    <div class="theme-toggle-wrap">
+      <button class="theme-btn" id="themeToggle">🌗 Сменить тему</button>
+    </div>
+
+    <!-- Профиль -->
+    <div class="profile">
+      <div class="avatar">А</div>
+      <div class="profile-text">
+        <h1>Алиса <span class="highlight">·</span> 14 лет</h1>
+        <div class="badge">🚀 юный программист</div>
+        <p>✦ создаю код с душой · учусь каждый день · люблю яркие решения</p>
+      </div>
+    </div>
+
+    <!-- Расширенное описание -->
+    <div class="about-me">
+      <p>
+        🧡 Привет! Я <strong>Алиса</strong>, мне 14 лет, и я обожаю создавать красивые и удобные вещи в интернете. 
+        Моя цель — делать сайты, которые радуют глаз и приносят пользу. Я постоянно учусь новому: от вёрстки до интерактивных элементов. 
+        <strong>Могу превратить любую идею в стильный и работающий макет.</strong> 
+        Люблю минимализм, яркие акценты и чистый код. 
+        ✨ Для меня важно, чтобы каждая деталь была на своём месте — как в дизайне, так и в коде.
+      </p>
+    </div>
+
+    <!-- Слайдер навыков -->
+    <div class="slider-section">
+      <div class="slider-header">
+        <h2>🧩 мои навыки <span>6</span></h2>
+        <span class="hint">↕ тяни в стороны</span>
+      </div>
+
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="skill-card">
+          <div class="skill-icon">🖌️</div>
+          <h3>HTML & CSS</h3>
+          <p>Вёрстка, адаптив, Flexbox, Grid. Стиль и структура.</p>
+          <div class="skill-level"><span>88%</span><div class="level-bar"><div class="level-fill html"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>JavaScript</h3>
+          <p>DOM, события, fetch, асинхронность. Оживляю страницы.</p>
+          <div class="skill-level"><span>58%</span><div class="level-bar"><div class="level-fill js"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🐍</div>
+          <h3>Python</h3>
+          <p>Синтаксис, функции, боты, работа с API.</p>
+          <div class="skill-level"><span>68%</span><div class="level-bar"><div class="level-fill python"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎨</div>
+          <h3>Иллюстрации</h3>
+          <p>Цифровой рисунок, композиция, цвет. Визуальное мышление.</p>
+          <div class="skill-level"><span>65%</span><div class="level-bar"><div class="level-fill illustrator"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗂️</div>
+          <h3>Git & GitHub</h3>
+          <p>Коммиты, ветки, пул-реквесты. Командная работа.</p>
+          <div class="skill-level"><span>62%</span><div class="level-bar"><div class="level-fill git"></div></div></div>
+        </div>
+        <div class="skill-card soft">
+          <div class="skill-icon">📚</div>
+          <h3>Быстро учусь</h3>
+          <p>Документация, туториалы, практика — мой драйв.</p>
+          <div class="skill-level"><span>90%</span><div class="level-bar"><div class="level-fill" style="width:90%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="slider-nav">
+        <button id="scrollLeftBtn">◀</button>
+        <button id="scrollRightBtn">▶</button>
+      </div>
+    </div>
+
+    <!-- МОИ РАБОТЫ -->
+    <div class="works-section">
+      <div class="slider-header" style="margin-bottom: 0.8rem;">
+        <h2>✨ мои работы</h2>
+        <span class="hint">✧ горжусь каждым проектом</span>
+      </div>
+      <div class="works-grid">
+        <a href="https://suno.com/s/7Wd4EyZVKKvWETs1" target="_blank" rel="noopener noreferrer" class="work-item">
+          <div class="emoji">🎵</div>
+          <h4>Песня</h4>
+          <p>создана в Suno AI</p>
+          <span class="work-link">suno.com/s/7Wd4EyZVKKvWETs1</span>
+        </a>
+        <a href="https://github.com/pleshaveniaa-lang/final_project.git" target="_blank" rel="noopener noreferrer" class="work-item">
+          <div class="emoji">💻</div>
+          <h4>Финальный проект</h4>
+          <p>репозиторий на GitHub</p>
+          <span class="work-link">github.com/pleshaveniaa-lang/final_project</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- КОНТАКТЫ -->
+    <div class="contacts">
+      <div class="contact-item"><span class="icon">📞</span> +7 568 345 078</div>
+      <div class="contact-item"><span class="icon">✉️</span> <a href="mailto:pleshaveniaa@gmail.com">pleshaveniaa@gmail.com</a></div>
+      <div class="contact-item">
+        <span class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <a href="#">@alisa_p</a>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span>Алиса</span> · портфолио юного программиста · 2026 ✦
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const slider = document.getElementById('sliderWrapper');
+      const leftBtn = document.getElementById('scrollLeftBtn');
+      const rightBtn = document.getElementById('scrollRightBtn');
+
+      function scrollSlider(direction) {
+        if (!slider) return;
+        const card = slider.querySelector('.skill-card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth;
+        const gap = 32;
+        const amount = cardWidth + gap;
+        slider.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+      }
+
+      leftBtn?.addEventListener('click', (e) => { e.preventDefault(); scrollSlider('left'); });
+      rightBtn?.addEventListener('click', (e) => { e.preventDefault(); scrollSlider('right'); });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.target.closest('.slider-wrapper') || e.target.closest('.slider-nav') || e.target.closest('.card')) {
+          if (e.key === 'ArrowLeft') { e.preventDefault(); scrollSlider('left'); }
+          else if (e.key === 'ArrowRight') { e.preventDefault(); scrollSlider('right'); }
+        }
+      });
+
+      const themeBtn = document.getElementById('themeToggle');
+      const body = document.body;
+      const themes = ['light', 'dark', 'pink'];
+      let currentThemeIndex = 0;
+
+      themeBtn?.addEventListener('click', () => {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        body.className = themes[currentThemeIndex];
+        const names = { light: '☀️ Светлая', dark: '🌙 Тёмная', pink: '🌸 Розовая' };
+        themeBtn.textContent = '🌗 ' + names[themes[currentThemeIndex]];
+      });
+    })();
+  </script>
+</body>
+</html>
