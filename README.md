@@ -19,16 +19,16 @@
 
 <div align="center">
 
-| 🚀 Технология | 🎯 Уровень | 📊 Прогресс |
+| 🚀 Технология | 🎯 Уровень | 
 |:---:|:---:|:---:|
-| **HTML5** | ⭐⭐⭐⭐⭐ | ![88%](https://progress-bar.dev/88) |
-| **CSS3** | ⭐⭐⭐⭐☆ | ![72%](https://progress-bar.dev/72) |
-| **JavaScript** | ⭐⭐⭐☆☆ | ![58%](https://progress-bar.dev/58) |
-| **Python** | ⭐⭐⭐⭐☆ | ![68%](https://progress-bar.dev/68) |
-| **Git & GitHub** | ⭐⭐⭐☆☆ | ![62%](https://progress-bar.dev/62) |
-| **Figma** | ⭐⭐⭐⭐☆ | ![65%](https://progress-bar.dev/65) |
-| **Адаптивная вёрстка** | ⭐⭐⭐⭐☆ | ![70%](https://progress-bar.dev/70) |
-| **Быстро учусь** | ⭐⭐⭐⭐⭐ | ![90%](https://progress-bar.dev/90) |
+| **HTML5** | ⭐⭐⭐⭐⭐ |
+| **CSS3** | ⭐⭐⭐⭐☆ | 
+| **JavaScript** | ⭐⭐⭐☆☆ |
+| **Python** | ⭐⭐⭐⭐☆ |
+| **Git & GitHub** | ⭐⭐⭐☆☆ | 
+| **Figma** | ⭐⭐⭐⭐☆ | 
+| **Адаптивная вёрстка** | ⭐⭐⭐⭐☆ |
+| **Быстро учусь** | ⭐⭐⭐⭐⭐ |
 
 </div>
 
