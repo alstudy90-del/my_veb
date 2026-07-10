@@ -9,7 +9,7 @@
 
 ---
 
-> 🚀 **Юный программист**, увлеченный созданием веб-приложений и дизайном.  
+> 🚀 **Юный программист**, увлеченный созданием веб-приложений, игр и Telegram-ботов.  
 > Мне **14 лет**, и я постоянно учусь новому в мире IT.  
 > ✨ Создаю код с душой · люблю яркие решения · делаю красиво!
 
@@ -28,7 +28,7 @@
 | **Git & GitHub** | ⭐⭐⭐☆☆ | ![62%](https://progress-bar.dev/62) |
 | **Figma** | ⭐⭐⭐⭐☆ | ![65%](https://progress-bar.dev/65) |
 | **Адаптивная вёрстка** | ⭐⭐⭐⭐☆ | ![70%](https://progress-bar.dev/70) |
-| **Быстро учусь** | ⭐⭐⭐⭐⭐ | ![90%](https://progress-bar.dev/90) |
+| **Pygame** | ⭐⭐⭐☆☆ | ![55%](https://progress-bar.dev/55) |
 
 </div>
 
@@ -39,6 +39,7 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pygame-2D9F5C?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
@@ -52,9 +53,13 @@
 | 🎨 Проект | 📝 Описание | 🔗 Ссылка |
 |:---:|:---|:---|
 | 🎵 **Песня** | Создана в Suno AI | [suno.com/s/7Wd4EyZVKKvWETs1](https://suno.com/s/7Wd4EyZVKKvWETs1) |
+| 🎮 **Игра** | Моя игра на JavaScript | [alstudy90-del.github.io/game/](https://alstudy90-del.github.io/game/) |
+| 🐍 **Эхо Бездны** | Roguelike RPG на Pygame | [GitHub репозиторий](https://github.com/pleshaveniaa-lang/echo_bezdny) |
 | 💻 **Финальный проект** | Репозиторий на GitHub | [github.com/pleshaveniaa-lang/final_project](https://github.com/pleshaveniaa-lang/final_project.git) |
 | 🌐 **Сайт-визитка** | Моё портфолио в интернете | [alstudy90-del.github.io/my_veb](https://alstudy90-del.github.io/my_veb/) |
-| 🎮 **Игра** | Моя игра на JavaScript | [alstudy90-del.github.io/game/](https://alstudy90-del.github.io/game/) |
+| 🤖 **Telegram бот (фильмы)** | Бот для поиска фильмов и сериалов | [@films_al_bot](https://t.me/films_al_bot) |
+| 🤖 **Telegram бот (AI помощник)** | Умный AI-помощник в Telegram | [@ai_help_al_bot](https://t.me/ai_help_al_bot) |
+| 🤖 **Telegram бот (первый)** | Мой первый Telegram-бот | [@first_al_bot](https://t.me/first_al_bot) |
 
 ---
 
