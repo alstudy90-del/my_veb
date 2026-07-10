@@ -806,4 +806,183 @@
 </head>
 <body class="light">
   <div class="card">
-    <!-- кнопка тем
+    <!-- кнопка тем -->
+    <div class="theme-toggle-wrap">
+      <button class="theme-btn" id="themeToggle">🌗 Сменить тему</button>
+    </div>
+
+    <!-- Профиль -->
+    <div class="profile">
+      <div class="avatar">А</div>
+      <div class="profile-text">
+        <h1>Алиса <span class="highlight">·</span> 14 лет</h1>
+        <div class="badge">🚀 юный программист</div>
+        <p>✦ создаю код с душой · учусь каждый день · люблю яркие решения</p>
+      </div>
+    </div>
+
+    <!-- Расширенное описание -->
+    <div class="about-me">
+      <p>
+        🧡 Привет! Я <strong>Алиса</strong>, мне 14 лет, и я обожаю создавать красивые и удобные вещи в интернете. 
+        Моя цель — делать сайты, которые радуют глаз и приносят пользу. Я постоянно учусь новому: от вёрстки до интерактивных элементов. 
+        <strong>Могу превратить любую идею в стильный и работающий макет.</strong> 
+        Люблю минимализм, яркие акценты и чистый код. 
+        ✨ Для меня важно, чтобы каждая деталь была на своём месте — как в дизайне, так и в коде.
+      </p>
+    </div>
+
+    <!-- Слайдер навыков -->
+    <div class="slider-section">
+      <div class="slider-header">
+        <h2>🧩 мои навыки <span>6</span></h2>
+        <span class="hint">↕ тяни в стороны</span>
+      </div>
+
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="skill-card">
+          <div class="skill-icon">🖌️</div>
+          <h3>HTML & CSS</h3>
+          <p>Вёрстка, адаптив, Flexbox, Grid. Стиль и структура.</p>
+          <div class="skill-level"><span>88%</span><div class="level-bar"><div class="level-fill html"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>JavaScript</h3>
+          <p>DOM, события, fetch, асинхронность. Оживляю страницы.</p>
+          <div class="skill-level"><span>58%</span><div class="level-bar"><div class="level-fill js"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🐍</div>
+          <h3>Python</h3>
+          <p>Синтаксис, функции, боты, работа с API.</p>
+          <div class="skill-level"><span>68%</span><div class="level-bar"><div class="level-fill python"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎨</div>
+          <h3>Иллюстрации</h3>
+          <p>Цифровой рисунок, композиция, цвет. Визуальное мышление.</p>
+          <div class="skill-level"><span>65%</span><div class="level-bar"><div class="level-fill illustrator"></div></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗂️</div>
+          <h3>Git & GitHub</h3>
+          <p>Коммиты, ветки, пул-реквесты. Командная работа.</p>
+          <div class="skill-level"><span>62%</span><div class="level-bar"><div class="level-fill git"></div></div></div>
+        </div>
+        <div class="skill-card soft">
+          <div class="skill-icon">📚</div>
+          <h3>Быстро учусь</h3>
+          <p>Документация, туториалы, практика — мой драйв.</p>
+          <div class="skill-level"><span>90%</span><div class="level-bar"><div class="level-fill" style="width:90%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="slider-nav">
+        <button id="scrollLeftBtn">◀</button>
+        <button id="scrollRightBtn">▶</button>
+      </div>
+    </div>
+
+    <!-- МОИ РАБОТЫ -->
+    <div class="works-section">
+      <div class="slider-header" style="margin-bottom: 0.8rem;">
+        <h2>✨ мои работы</h2>
+        <span class="hint">✧ горжусь каждым проектом</span>
+      </div>
+      <div class="works-grid">
+        <a href="https://suno.com/s/7Wd4EyZVKKvWETs1" target="_blank" rel="noopener noreferrer" class="work-item">
+          <div class="emoji">🎵</div>
+          <h4>Песня</h4>
+          <p>создана в Suno AI</p>
+          <span class="work-link">suno.com/s/7Wd4EyZVKKvWETs1</span>
+        </a>
+        <a href="https://github.com/pleshaveniaa-lang/final_project.git" target="_blank" rel="noopener noreferrer" class="work-item">
+          <div class="emoji">💻</div>
+          <h4>Финальный проект</h4>
+          <p>репозиторий на GitHub</p>
+          <span class="work-link">github.com/pleshaveniaa-lang/final_project</span>
+        </a>
+        <a href="https://alstudy90-del.github.io/game/" target="_blank" rel="noopener noreferrer" class="work-item">
+          <div class="emoji">🎮</div>
+          <h4>Игра</h4>
+          <p>моя игра на JavaScript</p>
+          <span class="work-link">alstudy90-del.github.io/game/</span>
+        </a>
+        <a href="https://t.me/films_al_bot" target="_blank" rel="noopener noreferrer" class="work-item">
+          <div class="emoji">🎬</div>
+          <h4>Telegram бот</h4>
+          <p>фильмы и сериалы</p>
+          <span class="work-link">@films_al_bot</span>
+        </a>
+        <a href="https://t.me/ai_help_al_bot" target="_blank" rel="noopener noreferrer" class="work-item">
+          <div class="emoji">🤖</div>
+          <h4>Telegram бот</h4>
+          <p>AI помощник</p>
+          <span class="work-link">@ai_help_al_bot</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- КОНТАКТЫ -->
+    <div class="contacts">
+      <div class="contact-item"><span class="icon">📞</span> +7 568 345 078</div>
+      <div class="contact-item"><span class="icon">✉️</span> <a href="mailto:pleshaveniaa@gmail.com">pleshaveniaa@gmail.com</a></div>
+      <div class="contact-item">
+        <span class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <a href="#">@alisa_p</a>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span>Алиса</span> · портфолио юного программиста · 2026 ✦
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const slider = document.getElementById('sliderWrapper');
+      const leftBtn = document.getElementById('scrollLeftBtn');
+      const rightBtn = document.getElementById('scrollRightBtn');
+
+      function scrollSlider(direction) {
+        if (!slider) return;
+        const card = slider.querySelector('.skill-card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth;
+        const gap = 32;
+        const amount = cardWidth + gap;
+        slider.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+      }
+
+      leftBtn?.addEventListener('click', (e) => { e.preventDefault(); scrollSlider('left'); });
+      rightBtn?.addEventListener('click', (e) => { e.preventDefault(); scrollSlider('right'); });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.target.closest('.slider-wrapper') || e.target.closest('.slider-nav') || e.target.closest('.card')) {
+          if (e.key === 'ArrowLeft') { e.preventDefault(); scrollSlider('left'); }
+          else if (e.key === 'ArrowRight') { e.preventDefault(); scrollSlider('right'); }
+        }
+      });
+
+      const themeBtn = document.getElementById('themeToggle');
+      const body = document.body;
+      const themes = ['light', 'dark', 'pink'];
+      let currentThemeIndex = 0;
+
+      themeBtn?.addEventListener('click', () => {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        body.className = themes[currentThemeIndex];
+        const names = { light: '☀️ Светлая', dark: '🌙 Тёмная', pink: '🌸 Розовая' };
+        themeBtn.textContent = '🌗 ' + names[themes[currentThemeIndex]];
+      });
+    })();
+  </script>
+</body>
+</html>
